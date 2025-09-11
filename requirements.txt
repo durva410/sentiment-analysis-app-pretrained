@@ -1,3 +1,7 @@
 streamlit
+emoji
+nltk
 transformers
 torch
+requests
+openai

@@ -1,61 +1,109 @@
-# 📝 Sentiment Analysis App
+# 📊 Sentiment Analysis Web App
 
-A simple web app built with **Streamlit** and **Hugging Face Transformers** to analyze the sentiment of user input text.
+A simple **Sentiment Analysis Web Application** built with [Streamlit](https://streamlit.io/) that analyzes text and classifies it into sentiments (Positive, Negative, Neutral).  
+It integrates **Hugging Face Transformers**, **NLTK**, and emoji preprocessing for richer text analysis.  
+
+---
 
 ## 🚀 Features
-- Predicts **Positive**, **Negative**, or **Neutral** sentiment of user input.
-- Displays prediction confidence score.
-- Automatically removes links from input text.
-- Interactive, user-friendly interface.
+- ✅ Real-time text sentiment classification  
+- ✅ Emoji-to-text conversion (😃 → :smile:)  
+- ✅ Sentence tokenization with NLTK  
+- ✅ Hugging Face Transformers integration  
+- ✅ Optional Hugging Face / OpenAI API support  
+- ✅ Interactive UI powered by Streamlit  
 
-## 🛠️ Installation
+---
 
-1. Clone the repository:
+## 📂 Project Structure
+```
+sentiment-analysis-app/
+│-- sentiment_app.py       # Main application script
+│-- requirements.txt       # Python dependencies
+│-- README.md              # Documentation
+```
+
+---
+
+## 🛠 Installation
+
+1. **Clone this repository**
    ```bash
-   git clone https://github.com/durva410/sentiment-analysis-app-pretrained.git
+   git clone https://github.com/yourusername/sentiment-analysis-app.git
    cd sentiment-analysis-app
    ```
 
-2. Create a virtual environment (recommended):
+2. **Create and activate a virtual environment** (optional but recommended)
    ```bash
    python -m venv venv
-   source venv/bin/activate   # On Linux/Mac
+   source venv/bin/activate   # On Mac/Linux
    venv\Scripts\activate      # On Windows
    ```
 
-3. Install dependencies:
+3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-## ▶️ Usage
+4. **Download NLTK tokenizer (first run only)**
+   ```python
+   import nltk
+   nltk.download('punkt')
+   ```
 
-Run the Streamlit app:
+---
+
+## 🔑 API Keys (Optional)
+If you want to use Hugging Face Inference API or OpenAI models:
+
+1. **Get Hugging Face Token** → [https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)  
+2. **Get OpenAI API Key** → [https://platform.openai.com](https://platform.openai.com)  
+3. Set them as environment variables:
+
+Linux/Mac:
+```bash
+export HF_API_KEY="your_huggingface_api_key"
+export OPENAI_API_KEY="your_openai_api_key"
+```
+
+Windows (CMD):
+```cmd
+set HF_API_KEY=your_huggingface_api_key
+set OPENAI_API_KEY=your_openai_api_key
+```
+
+---
+
+## ▶️ Running the App
+Start the Streamlit server:
 ```bash
 streamlit run sentiment_app.py
 ```
 
-Then open the URL shown in the terminal (usually `http://localhost:8501`) in your browser.
+Open your browser at [http://localhost:8501](http://localhost:8501).  
 
-## 📂 Project Structure
-```
-.
-├── sentiment_app_pretrained.py   # Main app code
-├── requirements.txt              # Dependencies
-└── README.md                     # Project documentation
-```
+---
 
-## 📦 Deployment
-- You can deploy this app on **Hugging Face Spaces** (free) or **Streamlit Cloud**.
-- Just upload your `sentiment_app_pretrained.py`, `requirements.txt`, and `README.md`.
-
-## ✨ Example
-Input:  
+## 📊 Example
+**Input:**  
 ```
-I love using this app!
+I love this app 😍 but the UI could be better.
 ```
 
-Output:  
-```
-Sentiment: POSITIVE 😀 (Confidence: 0.99)
-```
+**Output:**  
+- Sentiment: *Neutral / Mixed*  
+- Positive words: *love, 😍*  
+- Negative words: *better*  
+
+---
+
+## 📜 License
+This project is licensed under the MIT License.  
+
+---
+
+## 🙌 Acknowledgements
+- [Streamlit](https://streamlit.io/)  
+- [Hugging Face Transformers](https://huggingface.co/transformers/)  
+- [NLTK](https://www.nltk.org/)  
+- [Emoji](https://pypi.org/project/emoji/)  
