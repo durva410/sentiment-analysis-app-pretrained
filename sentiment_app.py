@@ -8,6 +8,9 @@ from transformers import pipeline
 from collections import Counter
 import os
 import openai
+import nltk
+nltk.download("punkt")
+nltk.download("punkt_tab")
 
 # NLTK Setup
 nltk.download('punkt', quiet=True)
